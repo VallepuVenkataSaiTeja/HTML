@@ -1,0 +1,294 @@
+<!-- 
+ 
+Lists :
+------
+- Lists are used to organize related items in a structured way.
+
+    Ordered List (<ol>) – Numbered list
+    Unordered List (<ul>) – Bulleted list
+    Description List (<dl>) – Terms and their descriptions
+
+
+Ordered List (<ol>) :
+--------------------
+- An ordered list displays items in a numbered sequence.
+
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ol>
+
+    1. Item 1
+    2. Item 2
+    3. Item 3
+
+
+List Item (<li>) :
+-----------------
+- The <li> (List Item) tag defines each item inside an ordered or unordered list.
+
+    <ol>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ol>
+
+
+Unordered List (<ul>) :
+----------------------
+- An unordered list displays items using bullets.
+
+    <ul>
+        <li>Apple</li>
+        <li>Mango</li>
+        <li>Orange</li>
+    </ul>
+
+    • Apple
+    • Mango
+    • Orange
+
+
+Ordered List Types :
+-------------------
+- Use the type attribute to change numbering style.
+
+=> Numbers (Default) :
+
+    <ol type="1">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ol>
+
+    1. HTML
+    2. CSS
+    3. JavaScript
+
+=> Uppercase Letters :
+
+    <ol type="A">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ol>
+
+    A. HTML
+    B. CSS
+    C. JavaScript
+
+=> Lowercase Letters :
+
+    <ol type="a">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ol>
+
+    a. HTML
+    b. CSS
+    c. JavaScript
+
+=> Uppercase Roman Numbers :
+
+    <ol type="I">
+        <li>Chapter One</li>
+        <li>Chapter Two</li>
+    </ol>
+
+    I. Chapter One
+    II. Chapter Two
+
+=> Lowercase Roman Numbers :
+
+    <ol type="i">
+        <li>Chapter One</li>
+        <li>Chapter Two</li>
+    </ol>
+
+    i. Chapter One
+    ii. Chapter Two
+
+
+Start Attribute :
+-----------------
+- Starts numbering from a specific value.
+
+    <ol start="5">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ol>
+
+    5. HTML
+    6. CSS
+    7. JavaScript
+
+
+Reversed Ordered List :
+----------------------
+- Displays numbering in reverse order.
+
+    <ol reversed>
+        <li>Third</li>
+        <li>Second</li>
+        <li>First</li>
+    </ol>
+
+    3. Third
+    2. Second
+    1. First
+
+
+List Item Value :
+----------------
+- Set the number for a particular list item.
+
+    <ol>
+        <li>HTML</li>
+        <li value="10">CSS</li>
+        <li>JavaScript</li>
+    </ol>
+
+    1. HTML
+    10. CSS
+    11. JavaScript
+
+
+Unordered List Styles :
+----------------------
+- The type attribute for <ul> is obsolete in HTML5. Use CSS instead.
+
+    <ul style="list-style-type: square;">
+        <li>Apple</li>
+        <li>Mango</li>
+    </ul>
+
+- Common values:
+
+    list-style-type: disc;
+    list-style-type: circle;
+    list-style-type: square;
+    list-style-type: none;
+
+
+Nested Lists :
+-------------
+- Lists can be placed inside other lists.
+
+    <ul>
+        <li>Frontend
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+        </li>
+
+        <li>Backend</li>
+    </ul>
+
+    • Frontend
+        • HTML
+        • CSS
+        • JavaScript
+
+    • Backend
+
+
+Description List (<dl>) :
+------------------------
+- Used for terms and their descriptions.
+
+- Tags Used :
+    <dl> → Description List
+    <dt> → Description Term
+    <dd> → Description Details
+
+    <dl>
+        <dt>HTML</dt>
+        <dd>HyperText Markup Language</dd>
+
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets</dd>
+
+        <dt>JavaScript</dt>
+        <dd>Programming language for web pages.</dd>
+    </dl>
+
+    HTML
+        HyperText Markup Language
+
+    CSS
+        Cascading Style Sheets
+
+    JavaScript
+        Programming language for web pages.
+
+
+Navigation Menu Using Lists :
+----------------------------
+- Lists are commonly used to create website navigation.
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+
+Horizontal Navigation (with CSS) :
+---------------------------------
+
+    <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+    </ul>
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        display: inline;
+        margin-right: 20px;
+    }
+
+    Home   About   Contact
+
+
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol reversed start="45">
+        <li value="22">one</li>
+        <li>two</li>
+    </ol>
+
+    <ul style="list-style-type: none;">
+        <li>one</li>
+        <li>two</li>
+    </ul>
+
+    <dl>
+        <dt>one</dt>
+        <dd>one is a number</dd>
+        <dt>two</dt>
+        <dd>two is a number</dd>
+    </dl>
+</body>
+</html>

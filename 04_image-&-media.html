@@ -1,0 +1,196 @@
+<!-- 
+ 
+Images (<img>) :
+---------------
+- The <img> tag is used to display images on a webpage.
+- Ex: <img src="image.jpg" alt="Description">
+
+    src → Path of the image
+    alt → Alternative text shown if the image cannot load
+    width → Width of the image
+    height → Height of the image
+
+
+Setting Image Size : ( Best Practice: Use CSS for styling whenever possible. )
+-------------------
+- Using HTML attributes:      <img src="flower.jpg" alt="Flower" width="300" height="200">
+- Or using CSS (recommended): <img src="flower.jpg" alt="Flower" style="width:300px; height:200px;">
+
+
+Alternative Text (alt) :
+-----------------------
+- Provides a description if the image cannot load and helps screen readers.
+- Improves accessibility.
+- Helps search engines understand images.
+- Displays text if the image fails to load.
+- Ex: <img src="cat.jpg" alt="A white cat sleeping">
+
+
+Title Attribute :
+---------------- 
+- Displays a tooltip when the user hovers over the image.
+- Ex: <img src="flower.jpg" alt="Flower" title="Beautiful Flower">
+
+
+Image as a Link :
+----------------
+- Clicking the image opens the linked page.
+- Ex: <a href="index.html"> <img src="logo.png" alt="Company Logo"> </a>
+
+
+Responsive Images :
+------------------
+- Ex: <img src="nature.jpg" alt="Nature" style="max-width:100%; height:auto;">
+- This allows the image to resize with the screen.
+
+
+Figure and Caption :
+-------------------
+- Use <figure> to group an image with a caption.
+
+    <figure>
+        <img src="mountain.jpg" alt="Mountain">
+        <figcaption>Beautiful Mountain View</figcaption>
+    </figure>
+
+
+Audio (<audio>) :
+----------------
+- Used to play audio files.
+
+    <audio controls>
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
+
+ - controls displays: Play, Pause, Volume, Progress bar
+
+
+Multiple Audio Formats :
+-----------------------
+
+    <audio controls>
+        <source src="song.mp3" type="audio/mpeg">
+        <source src="song.ogg" type="audio/ogg">
+        Your browser does not support audio.
+    </audio>
+
+
+Audio Attributes :
+-----------------
+
+controls  ->  Show controls             
+autoplay  ->  Play automatically        
+loop      ->  Repeat continuously       
+muted     ->  Start muted               
+preload   ->  Load audio before playing 
+
+
+Video (<video>) :
+----------------
+- Used to display videos.
+
+    <video controls width="500">
+        <source src="movie.mp4" type="video/mp4">
+    </video>
+
+
+Multiple Video Formats :
+-----------------------
+
+    <video controls width="500">
+        <source src="movie.mp4" type="video/mp4">
+        <source src="movie.webm" type="video/webm">
+        Your browser does not support video.
+    </video>
+
+
+Video Attributes :
+-----------------
+
+controls  ->  Show controls            
+autoplay  ->  Auto play                
+loop      ->  Repeat                   
+muted     ->  Start muted              
+poster    ->  Thumbnail before playing 
+width     ->  Video width              
+height    ->  Video height  
+
+    <video controls width="600" poster="thumbnail.jpg">
+        <source src="movie.mp4" type="video/mp4">
+    </video>
+
+
+Embedding YouTube Videos :
+-------------------------
+- Use the embed code provided by YouTube.
+- Replace VIDEO_ID with the video's ID.
+
+    <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/VIDEO_ID"
+        title="YouTube video"
+        allowfullscreen>
+    </iframe>
+
+
+<iframe> :
+---------
+- Used to embed another webpage or external content.
+
+    <iframe
+        src="about.html"
+        width="500"
+        height="300">
+    </iframe>
+
+- Or embed a map: 
+
+    <iframe
+        src="https://www.google.com/maps/embed?..."
+        width="600"
+        height="450">
+    </iframe>
+
+
+Image Formats : JPG/JPEG, PNG, GIF, SVG, WebP
+--------------
+
+Audio Formats : MP3, OGG, WAV
+--------------
+
+Video Formats : MP4, WebM, OGV
+--------------
+
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="https://avatars.githubusercontent.com/u/77481475?s=200&v=4" alt="logo alt" title="logo title" style="height: 100%;">
+
+    <figure>
+        <img src="https://avatars.githubusercontent.com/u/77481475?s=200&v=4" alt="">
+        <figcaption>fig caption image</figcaption>
+    </figure>
+
+    <audio controls src="song.mp3"></audio>
+
+    <audio controls>
+        <source src="song.mp3">
+    </audio>
+
+    <video controls src="video.mp4" width="500" poster="https://avatars.githubusercontent.com/u/77481475?s=200&v=4"></video>
+    
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/CgkZ7MvWUAA?si=EgFZGPCoxEzEaiuV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <iframe src="./03_links-&-navigation.html" width="300"></iframe>
+</body>
+</html>

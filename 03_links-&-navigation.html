@@ -1,0 +1,251 @@
+<!-- 
+ 
+Links :
+------
+- to move from one webpage, website, section, email, or phone number to another.
+
+
+HTML Link (<a> Tag) :
+--------------------
+- used to create hyperlinks.
+- Ex: <a href="URL">Link Text</a>
+    <a> → Anchor tag
+    href → Hypertext Reference (destination of the link)
+    Link Text → Text visible to users
+
+
+Absolute URL :
+-------------
+- An absolute URL points to another website.
+- Ex: <a href="https://www.google.com">Google</a>
+
+
+Relative URL :
+-------------
+- A relative URL points to another page within the same website.
+- No need to write https://
+- Ex: <a href="about.html">About Us</a>
+
+
+Opening Links in a New Tab :
+---------------------------
+- Use the target attribute.
+- Ex: <a href="https://www.google.com" target="_blank"> Open Google </a>
+
+    _self   : Opens in same tab (default)
+    _blank  : Opens in new tab
+    _parent : Opens in parent frame
+    _top    : Opens in full window
+
+
+Security with rel :
+------------------
+- When using target="_blank", it's good practice to add: rel="noopener noreferrer"
+- Ex: <a href="https://example.com" target="_blank" rel="noopener noreferrer"> Visit Website </a>
+   * noopener prevents the new page from accessing your page through window.opener.
+   * noreferrer also prevents sending the referring page's URL.
+
+
+Title Attribute :
+----------------
+- Shows a tooltip when hovering over the link.
+- Ex: <a href="about.html" title="Go to About Page"> About </a>
+
+
+Email Link :
+-----------
+- Use mailto:
+- Clicking the link opens the default email application.
+- Ex: <a href="mailto:john@example.com"> Send Email </a>
+
+
+Phone Link :
+-----------
+- Use tel:
+- Useful for mobile devices.
+- Ex: <a href="tel:+919876543210"> Call Us </a>
+
+
+Download Link :
+--------------
+- Use the download attribute.
+- The browser downloads the file instead of opening it (when supported).
+- Ex: <a href="resume.pdf" download> Download Resume </a>
+
+
+Image as a Link :
+----------------
+- Images can also be clickable.
+- Ex: <a href="index.html"> <img src="logo.png" alt="Company Logo"> </a>
+    * Clicking the image navigates to the homepage.
+
+
+Linking to Sections (Bookmarks) :
+--------------------------------
+- Navigate to a specific part of the same page.
+- Step 1: Add an id       -> <h2 id="contact">Contact Us</h2>
+- Step 2: Create the link -> <a href="#contact"> Go to Contact Section </a>
+
+
+Linking to a Section on Another Page :
+-------------------------------------
+- Ex: <a href="about.html#team"> Meet Our Team </a>
+
+
+Navigation Menu :
+----------------
+- A navigation menu is usually built using <nav>.
+
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="about.html">About</a> |
+        <a href="services.html">Services</a> |
+        <a href="contact.html">Contact</a>
+    </nav>
+
+
+Navigation Using Lists (Best Practice) :
+---------------------------------------
+- Using a list makes the navigation easier to style with CSS and improves accessibility.
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+
+Folder Navigation :
+------------------
+
+    project/
+    │
+    ├── index.html
+    ├── about.html
+    │
+    ├── pages/
+    │      contact.html
+    │      services.html
+    │
+    └── images/
+        logo.png
+
+- Open a file inside a folder -> <a href="pages/contact.html">Contact</a>
+- Go back one folder          -> Suppose you're inside pages/contact.html & To open index.html: <a href="../index.html">Home</a>
+  .. means go up one directory.
+
+
+Multiple Folder Example :
+------------------------
+
+    project/
+    │
+    ├── index.html
+    │
+    ├── pages/
+    │     services/
+    │          web.html
+    │
+    └── images/
+        logo.png
+
+
+- From web.html to index.html: <a href="../../index.html">Home</a>
+     First .. → services → pages
+     Second .. → pages → project
+
+
+Empty Link :
+-----------
+- Sometimes used as a placeholder.
+- Note: Avoid using # as a final solution in production because it jumps to the top of the page.
+- Ex: <a href="#">Click Here</a>
+
+
+JavaScript Link (Not Recommended for Navigation) :
+-------------------------------------------------
+- Use this only when appropriate; buttons are usually a better choice for actions.
+- Ex: <a href="javascript:void(0)">Do Nothing</a>
+
+
+Link States (CSS) :
+------------------
+- Links have four common states that can be styled with CSS:
+
+    a:link {
+        color: blue;
+    }
+
+    a:visited {
+        color: purple;
+    }
+
+    a:hover {
+        color: red;
+    }
+
+    a:active {
+        color: green;
+    }
+
+    :link    =  Unvisited link      
+    :visited =  Already visited     
+    :hover   = Mouse over the link 
+    :active  =   While being clicked 
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a1:link {
+            color: antiquewhite;
+        }
+        .a1:visited {
+            color: brown;
+        }
+        .a1:hover {
+            color: aqua ;
+        }
+        .a1:active {
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.google.com">google</a>
+    <a href="./02_text-elements.html">2nd page</a>
+
+    <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" title="google web" >Google</a>
+
+    <a href="mailto:test@gmail.com">Mail</a>
+
+    <a href="tel:+910000000000">Call us</a>
+
+    <a href="test.pdf" download>Download</a>
+
+    <a href="./02_text-elements.html">
+        <img src="https://brightdata.com/www/lum/pub/img/user_32.svg" alt="">
+    </a>
+
+    <h2 id="id2">Section2</h2>
+
+    <h2 id="id3">Section3</h2>
+
+    <a class="a1" href="#id2">Sec 2</a>
+    <a href="#id3">Sec 3</a>
+
+    <a href="./02_text-elements.html#p-test">before page last section</a>
+
+    <a href="javascript: void(0)">void js</a>
+</body>
+</html>

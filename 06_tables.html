@@ -1,0 +1,372 @@
+<!-- 
+ 
+Tables :
+-------
+- HTML tables are used to display data in rows and columns.
+
+
+Basic Table Structure :
+----------------------
+- A table consists of:
+
+    <table> → Creates the table
+    <tr> → Table Row
+    <th> → Table Header
+    <td> → Table Data (Cell)
+
+        <table>
+            <tr>
+                <th>Header</th>
+                <th>Header</th>
+            </tr>
+
+            <tr>
+                <td>Data</td>
+                <td>Data</td>
+            </tr>
+        </table>
+
+
+Border Attribute :
+-----------------
+- Older HTML used the border attribute.
+- Note: The border attribute is obsolete in HTML5. Use CSS instead.
+
+    <table border="1">
+        <tr>
+            <td>HTML</td>
+            <td>CSS</td>
+        </tr>
+    </table>
+
+
+Table Border Using CSS :
+-----------------------
+
+    table, th, td {
+        border: 1px solid black;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+- border-collapse => Removes the double border between cells.
+
+
+Cell Padding :
+-------------
+- Adds space inside table cells.
+
+    th, td {
+        padding: 10px;
+    }
+
+Cell Spacing :
+-------------
+- Older HTML: <table cellspacing="10">
+- Modern CSS:
+
+    table {
+        border-spacing: 10px;
+    }
+
+
+Table Width :
+------------
+
+    table {
+        width: 100%;
+    }
+
+    table {
+        width: 500px;
+    }
+
+
+Table Caption :
+--------------
+- Adds a title to the table.
+
+
+    <table>
+        <caption>Student Details</caption>
+
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+
+        <tr>
+            <td>John</td>
+            <td>22</td>
+        </tr>
+    </table>
+
+
+Column Span (colspan) :
+----------------------
+- Allows one cell to span multiple columns.
+
+
+    <table border="1">
+        <tr>
+            <th colspan="2">Student Information</th>
+        </tr>
+
+        <tr>
+            <td>Name</td>
+            <td>John</td>
+        </tr>
+    </table>
+
+
+Row Span (rowspan) :
+-------------------
+- Allows one cell to span multiple rows.
+
+
+    <table border="1">
+        <tr>
+            <th rowspan="2">Name</th>
+            <td>John</td>
+        </tr>
+
+        <tr>
+            <td>Alice</td>
+        </tr>
+    </table>
+
+
+Combining rowspan and colspan :
+------------------------------ 
+
+    <table border="1">
+        <tr>
+            <th rowspan="2">Name</th>
+            <th colspan="2">Marks</th>
+        </tr>
+
+        <tr>
+            <th>Math</th>
+            <th>Science</th>
+        </tr>
+
+        <tr>
+            <td>John</td>
+            <td>90</td>
+            <td>85</td>
+        </tr>
+    </table>
+
+
+Table Sections :
+---------------
+- HTML provides semantic sections.
+
+    <thead> → Header
+    <tbody> → Main data
+    <tfoot> → Footer
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>John</td>
+                <td>95</td>
+            </tr>
+
+            <tr>
+                <td>Alice</td>
+                <td>88</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td>Total Students</td>
+                <td>2</td>
+            </tr>
+        </tfoot>
+
+    </table>
+
+
+Styling Tables :
+---------------
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th {
+        background-color: lightgray;
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+    }
+
+
+Alternating Row Colors :  improves readability.
+-----------------------
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+
+Hover Effect :
+-------------
+
+    tr:hover {
+        background-color: lightyellow;
+    }
+
+
+Responsive Tables :
+------------------
+- For wide tables, wrap them in a container.
+- This allows horizontal scrolling on smaller screens.
+
+    <div class="table-container">
+        <table>
+            ...
+        </table>
+    </div>
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, th, td {
+            border: 1px solid #000000;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 10px;
+            width: 600px;
+        }
+        th, td {
+            padding: 10px;
+        }
+
+        tr:nth-child(even){
+            background-color: #f2f2f2;
+        }
+        tr:hover{
+            background-color:aquamarine ;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>student details</caption>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>22</td>
+            <td>Delhi</td>
+        </tr>
+        <tr>
+            <td>Alice</td>
+            <td>20</td>
+            <td>Mumbai</td>
+        </tr>
+    </table>
+
+    <table border="1">
+        <tr>
+            <th colspan="2">Student details</th>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>John</td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th rowspan="2">Name</th>
+            <th>John</th>
+        </tr>
+        <tr>
+            <th>Alice</th>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th rowspan="2">Name</th>
+            <th colspan="2">Marks</th>
+        </tr>
+        <tr>
+            <th>Maths</th>
+            <th>Science</th>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>90</td>
+            <td>85</td>
+        </tr>
+    </table>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Marks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John</td>
+                <td>95</td>
+            </tr>
+            <tr>
+                <td>Alice</td>
+                <td>99</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Number of students</td>
+                <td>2</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <table class="table-container">
+
+    </table>
+</body>
+</html>

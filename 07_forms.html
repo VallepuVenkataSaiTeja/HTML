@@ -1,0 +1,405 @@
+<!-- 
+
+Forms :
+------
+- forms are used to collect user input.
+
+
+<form> Tag :
+-----------
+- A form is created using the <form> element.
+- The <form> element acts as a container for all form controls.
+- Ex:  <form action="submit.php" method="post"> </form>
+
+Common Attributes :
+
+action        =>  URL where form data is sent   
+method        =>  HTTP method (`GET` or `POST`) 
+autocomplete  =>  Enable/disable autocomplete   
+target        =>  Where to display the response 
+novalidate    =>  Disable browser validation    
+
+
+Form Methods :
+-------------
+
+GET :
+----
+- Data is sent through the URL.
+- Suitable for searches and filters.
+- Less secure for sensitive information.
+
+- Ex: <form action="/search" method="get">
+  URL Example: /search?name=John
+
+POST :
+-----
+- Data is sent in the request body.
+- More secure than GET.
+- Used for login, registration, and payments.
+
+- Ex: <form action="/register" method="post">
+
+
+<label> :
+--------
+- Labels describe form fields.
+- Use the for attribute.
+- Clicking the label focuses the input.
+
+    <label for="name">Name</label>
+    <input type="text" id="name">
+
+
+<input> :
+--------
+- The most commonly used form element.
+
+    <input type="text">
+
+
+Text Input :
+-----------
+
+    <input type="text">
+
+
+Placeholder :
+------------
+- Displays hint text.
+
+    <input
+    type="text"
+    placeholder="Enter your name">
+
+
+Name Attribute :
+---------------
+- The name attribute is required if you want the field's value to be submitted.
+
+    <input
+    type="text"
+    name="username">
+
+
+Value Attribute :
+----------------
+- Sets the default value.
+
+    <input
+    type="text"
+    value="John">
+
+
+Required Field :
+---------------
+- The browser prevents submission until the field is filled.
+
+    <input
+    type="text"
+    required>
+
+
+Readonly :
+---------
+- User cannot edit the value.
+
+    <input
+    type="text"
+    value="India"
+    readonly>
+
+
+Disabled :
+---------
+- Input cannot be used or submitted.
+
+    <input
+    type="text"
+    disabled>
+
+
+Size Attribute :
+---------------
+- Specifies the visible width of the input in characters.
+
+    <input
+    type="text"
+    size="30">
+
+
+Maxlength :
+----------
+- Limits the number of characters.
+
+    <input
+    type="text"
+    maxlength="10">
+
+
+Input Types :
+------------
+
+- Text           : Used for names and general text. ( <input type="text"> )
+- Password       : Characters are hidden. ( <input type="password"> )
+- Email          : Browser validates email format. ( <input type="email"> )
+- Number         : ( <input type="number" min="1" max="100"> )
+- Tel            : For phone numbers. ( <input type="tel"> )
+- URL            : Validates website addresses. ( <input type="url"> )
+- Search         : Optimized for search fields. ( <input type="search"> )
+- Date           : ( <input type="date"> )
+- Time           : ( <input type="time"> )
+- Datetime-local : ( <input type="datetime-local"> )
+- Month          : ( <input type="month"> )
+- Week           : ( <input type="week"> )
+- Color          : Displays a color picker. ( <input type="color"> )
+- Range          : Creates a slider. ( <input type="range" min="0" max="100"> )
+- Hidden         : Stores hidden data. ( <input type="hidden" value="123"> )
+
+
+Radio Buttons :
+--------------
+- Allows only one selection from a group.
+- All radio buttons in the same group must share the same name.
+
+    <input
+        type="radio"
+        name="gender"
+        value="Male"> Male
+
+    <input
+        type="radio"
+        name="gender"
+        value="Female"> Female
+
+
+Checkboxes :
+-----------
+- Allows multiple selections.
+
+    <input
+    type="checkbox"
+    name="skill"
+    value="HTML"> HTML
+
+    <input
+        type="checkbox"
+        name="skill"
+        value="CSS"> CSS
+
+    <input
+        type="checkbox"
+        name="skill"
+        value="JavaScript"> JavaScript
+
+
+File Upload :
+------------
+
+- <input type="file">
+- <input type="file" accept="image/*"> ( Accept only images )
+- <input type="file" multiple> ( Allow multiple files )
+
+
+Submit Button :  <input type="submit" value="Register">
+--------------
+
+
+Reset Button : Resets all fields to their initial values.
+-------------
+     <input type="reset">
+
+
+
+Button :
+-------
+
+    <button>Click Me</button> (or)
+
+    <button type="submit">
+        Submit
+    </button>
+
+
+Textarea : For multi-line text.
+---------
+
+    <textarea
+        rows="5"
+        cols="30">
+    </textarea>
+
+
+Select (Drop-down) :
+-------------------
+
+    <select>
+
+    <option>India</option>
+
+    <option>USA</option>
+
+    <option>Canada</option>
+
+    </select>
+
+Selected Option : <option selected>India</option>
+
+Grouping Options :
+
+    <select>
+
+    <optgroup label="Asia">
+
+    <option>India</option>
+
+    <option>Japan</option>
+
+    </optgroup>
+
+    <optgroup label="Europe">
+
+    <option>Germany</option>
+
+    <option>France</option>
+
+    </optgroup>
+
+    </select>
+
+
+Datalist :
+---------
+- Provides autocomplete suggestions while allowing custom input.
+
+    <input
+        list="cities">
+
+    <datalist id="cities">
+
+    <option value="Delhi">
+
+    <option value="Mumbai">
+
+    <option value="Bengaluru">
+
+    </datalist>
+
+
+Fieldset and Legend :
+--------------------
+- Groups related form controls.
+
+    <fieldset>
+
+    <legend>Personal Information</legend>
+
+    <label>Name</label>
+
+    <input type="text">
+
+    </fieldset>
+
+
+Browser Validation :
+-------------------
+
+    <input type="email" required>
+    <input type="number" min="18" max="60">
+    <input type="text" pattern="[A-Za-z]{3,}">
+
+
+Autocomplete :
+-------------
+
+    <form autocomplete="on">
+    <form autocomplete="off"> ( disable )
+
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="" method="" autocomplete="off" >
+        <label for="username">Name</label>
+        <input type="text" name="uname" id="username" placeholder="enter name" value="john" required size="30" maxlength="6">
+
+        <label for="">password</label>
+        <input type="password">
+
+        <label for="">email</label>
+        <input type="email">
+
+        <label for="">number</label>
+        <input type="number" min="1" max="20">
+
+        <br>
+
+        <label for="">tel</label>
+        <input type="tel" name="" id="">
+
+        <br>
+
+        <label for="">url</label>
+        <input type="url" name="" id="">
+
+        <br>
+        Search <input type="search" name="" id="">
+        <br>
+        Date: <input type="date" name="" id="">
+        <br>
+        time: <input type="time" name="" id="">
+        <br>
+        date-time : <input type="datetime-local">
+        <br>
+        month: <input type="month">
+        <br>
+        week: <input type="week">
+        <br>
+        <input type="color">
+        <br>
+        range: <input type="range" max="22" min="10" name="" id="">
+        <br>
+        hidden: <input type="hidden">
+        <br>
+        <input type="radio" name="gender" value="male"> Male
+        <input type="radio" name="gender" value="female"> Female
+        <br>
+        <input type="checkbox" name="skill" value="HTML">HTML
+        <input type="checkbox" name="skill" value="CSS">CSS
+        <input type="checkbox" name="skill" value="JS">JS
+        <br>
+        <input type="file" accept="image/*" multiple>
+        <br>
+        <input type="submit"> <input type="reset">
+        <br>
+        <button>Click me</button>
+        <button type="submit">register</button>
+        <br>
+        <fieldset>
+            <legend>option</legend>
+            <textarea name="" id="" rows="5" cols="30"></textarea>
+        <br>
+        <select name="" id="">
+            <option value="india">India</option>
+            <option value="usa" selected>USA</option>
+        </select>
+        <br>
+        <input list="cities">
+        <datalist id="cities">
+             <option value="USA">USA</option>
+             <option value="France">France</option>
+             <option value="Norway">Norway</option>
+        </datalist>
+        </fieldset>
+    </form>
+</body>
+</html>

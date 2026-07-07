@@ -1,5 +1,3 @@
-You're covering almost everything taught in **HTML Basics**. Here's a complete roadmap.
-
 # HTML Basics
 
 ## 1. What is HTML?
